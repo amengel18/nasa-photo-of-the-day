@@ -9,7 +9,6 @@ export default function Header (props) {
             <h1>Nasa Photo of the Day</h1>
             <p>{nasaData.date}</p>
             <p>{nasaData.title}</p>
-            <p>{nasaData.explantion}</p>
         </div>
     )
 }

@@ -4,8 +4,7 @@ export default function Footer (props){
     const { nasaData } = props
 
     return(
-        <div>
-            
+        <div> 
             <p>{nasaData.copyright}</p>
         </div>
     )

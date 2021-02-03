@@ -7,6 +7,7 @@ export default function PhotoOfDay (props){
         <div>
             
             <img src={nasaData.url} alt={nasaData.title}/>
+            <p>{nasaData.explanation}</p>
         </div>
     )
 }
