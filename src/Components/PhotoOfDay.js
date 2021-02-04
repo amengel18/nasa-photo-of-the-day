@@ -1,13 +1,23 @@
 import React from "react"
+import styled from "styled-components"
+
+const StyledPhoto = styled.div`
+   color: navy;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+`
+
 
 export default function PhotoOfDay (props){
     const { nasaData } = props
 
     return (
-        <div>
+        <StyledPhoto>
             
             <img src={nasaData.url} alt={nasaData.title}/>
             <p>{nasaData.explanation}</p>
-        </div>
+        </StyledPhoto>
     )
 }

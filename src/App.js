@@ -4,13 +4,21 @@ import axios from "axios";
 import Header from "./Components/Header"
 import PhotoOfDay from "./Components/PhotoOfDay"
 import Footer from "./Components/Footer"
+import styled from "styled-components"
 
+const StyledApp = styled.div`
+  background-color: gray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+`
 
 function App() {
   const [ nasaData, setNasaData ] = useState([])
 
   const fetchPhoto = () => {
-    axios.get("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY")
+    axios.get("https://api.nasa.gov/planetary/apod?api_key=LeHsFcV7QCYsQpnhja91M5wlvOQ461WLzH45tL6J")
       .then(response => {
         console.log(response)
         setNasaData(response.data)
@@ -20,8 +28,9 @@ function App() {
 
   useEffect(fetchPhoto, [])
   
+
   return (
-    <div className="App">
+    <StyledApp>
       
        {/* Read through the instructions in the README.md file to build your NASA
         app! Have fun <span role="img" aria-label='go!'>🚀</span>!*/}
@@ -29,7 +38,7 @@ function App() {
         <PhotoOfDay nasaData={nasaData}/>
         <Footer nasaData={nasaData}/>
       
-    </div>
+    </StyledApp>
   );
 }
 
